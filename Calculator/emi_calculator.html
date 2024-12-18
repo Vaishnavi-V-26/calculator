@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="emi_calculator.css">
+
+</head>
+
+<body>
+    <div>
+        <h1>Equated Monthly Instalment(EMI) Calculator</h1>
+
+        <label for="loanAmt">Loan Amount:</label> &nbsp;
+        <input type="number" id="loanAmt"><br><br>
+
+        <label for="interest">Interest Rate(%):</label> &nbsp;
+        <input type="number" id="interest"><br><br>
+
+        <label for="months">Loan Term (in months):</label> &nbsp;
+        <input type="number" id="months"><br><br>
+
+        <button type="button" onclick="calculateEMI()">Calculate EMI</button> &nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="reset()">Clear</button><br><br>
+
+        <p>EMI: <span id="emi"></span></p>
+        <p>Interest: <span id="emi_interest"></span> </p>
+        <p>Total Amount to be Payed: <span id="total"></span></p>
+
+    </div>
+
+    <script>
+
+        var loanAmount = document.getElementById("loanAmt");
+        var interest = document.getElementById("interest");
+        var loanTerm = document.getElementById("months");
+
+        function calculateEMI() {
+            var loanAmountVal = loanAmount.value;
+            var interestVal = interest.value / 100 / 12;
+            var loanTermVal = loanTerm.value;
+            var emi = loanAmountVal * interestVal * Math.pow((1 + interestVal), loanTermVal) / (Math.pow((1 + interestVal), loanTermVal) - 1);
+            var emi_interest = (emi * loanTermVal - loanAmountVal).toFixed(2);
+            var totalAmt = (emi * loanTermVal).toFixed(2);
+            document.getElementById("emi").innerHTML = `₹ ${emi.toFixed(2)}`;
+            document.getElementById("emi_interest").innerHTML = `₹ ${emi_interest}`;
+            document.getElementById("total").innerHTML = `₹ ${totalAmt}`;
+
+        }
+
+        function reset() {
+            loanAmount.value = "";
+            interest.value = "";
+            loanTerm.value = "";
+            document.getElementById("emi").innerHTML = "";
+            document.getElementById("emi_interest").innerHTML = "";
+            document.getElementById("total").innerHTML = "";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

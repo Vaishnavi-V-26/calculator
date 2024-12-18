@@ -1,0 +1,48 @@
+body {
+    background-image: url(background.jpg);
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-repeat: none;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    text-align: center;
+    color:black;
+    border: 3px solid black;
+    margin-left: 10cm;
+    margin-right: 10cm;
+    margin-top: 3cm;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(58, 58, 58, 0.5333);
+    margin: 50px;
+    padding: 50px;
+}
+
+button {
+    border-radius: 5px;
+    font-size: medium;
+    color: rgb(255, 255, 255);
+    background-color: rgb(28, 0, 122);
+}
+
+button:hover {
+    font-size: large;
+    background-color: rgb(96, 2, 57);
+    color: white;
+}
+label{
+    font-weight: bold;
+    font-size: large;
+}
+#solution{
+    font-size: larger;
+}

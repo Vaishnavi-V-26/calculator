@@ -1,0 +1,43 @@
+body{
+    background-image: url(image1.jpg);
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-repeat: none;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div{
+    text-align: center;
+    margin-top:4cm ;
+    border: 3px solid rgb(14, 14, 14);
+    margin-left: 4cm;
+    margin-right: 4cm;
+    padding-left: 10px;
+    padding-right: 20px;
+    color: rgb(255, 255, 255);
+}
+label{
+    font-size: larger;
+    font-weight: bold;
+}
+p{
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bold;
+}
+span{
+    color: rgb(255, 252, 252);
+    font-size: large;
+    font-weight: 800;
+}
+
+button{
+    background-color: rgb(255, 105, 4);
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 7px;
+}

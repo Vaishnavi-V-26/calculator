@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BMI Calculator</title>
+
+   <link rel="stylesheet" href="bmi_calculator.css">
+
+</head>
+
+<body>
+   <div id="container">
+      <h1>Body Mass Index(BMI) Calculator</h1>
+
+      <label for="age">AGE:</label> &nbsp;
+      <input type="number" id="age" placeholder="Enter Your Age"><br><br>
+
+      <label for="weight">WEIGHT:</label> &nbsp;
+      <input type="number" id="weight" placeholder="Weight in (kg)">&nbsp;<span>(kgs)</span> <br><br>
+
+      <label for="height">HEIGHT:</label> &nbsp;
+      <input type="number" id="height" placeholder="Height in (cm)"> &nbsp;<span>(cm)</span> <br><br>
+
+      <button type="button" onclick="calculateBMI()">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" onclick="clearFields()">Clear</button> <br><br>
+      <p id="result"></p> <br><br>
+   </div>
+
+   <div>
+      <img src="bmi.jpg" alt="BMI Range">
+   </div>
+
+   <script>
+      var age = document.getElementById("age");
+      var weight = document.getElementById("weight");
+      var height = document.getElementById("height");
+      var result = document.getElementById("result");
+      function calculateBMI() {
+         var ageVal = age.value;
+         var weightVal = weight.value;
+         var heightVal = height.value;
+         var bmi = (weightVal / (heightVal * heightVal)) * 10000;
+
+         if (bmi <= 18.5) {
+            result.innerHTML = `Your age is ${ageVal}. Your BMI is ${bmi.toFixed(2)}. You are Underweight`;
+            result.style.color="violet";
+         }
+         else if (bmi > 18.5 && bmi <= 24.9) {
+            result.innerHTML = `Your age is ${ageVal}. Your BMI is ${bmi.toFixed(2)}. You are Normal Weight`;
+            result.style.color="green";
+
+         }
+         else if (bmi >= 25 && bmi <= 29.9) {
+            result.innerHTML = `Your age is ${ageVal}. Your BMI is ${bmi.toFixed(2)}. You are Overweight`;
+            result.style.color="orange";
+         }
+         else if (bmi >= 30 && bmi <= 34.9) {
+            result.innerHTML = `Your age is ${ageVal}. Your BMI is ${bmi.toFixed(2)}. You are Obesity`;
+            result.style.color="red";
+         }
+         else {
+            result.innerHTML = `Your age is ${ageVal}. Your BMI is ${bmi.toFixed(2)}. You are Extreme Obesity`;
+            result.style.color="red";
+         }
+      }
+
+      function clearFields() {
+         age.value = ''
+         height.value = '';
+         weight.value = '';
+         result.innerHTML = '';
+      }
+   </script>
+</body>
+
+</html>
